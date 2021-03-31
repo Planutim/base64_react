@@ -1,0 +1,103 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+.base64-form {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 10vh;
+    min-width: 576px;
+    height: 85vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas: "header" "string" "swap" "base64" "button";
+}
+.base64_first{
+    grid-template-areas:
+        "header"
+        "base64"
+        "swap"
+        "string"
+        "button";
+}
+.base64-form__header{
+    color: rgb(94, 80, 80);
+    font-weight: bold;
+    letter-spacing: 2px;
+    grid-area: header;
+    text-align:center;
+}
+.string{
+    grid-area: string;
+}
+.base64{
+    grid-area: base64;
+}
+.base64-form__group{
+    user-select: none;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.base64-form__swap {
+    user-select: none;
+    display: block;
+    width: 30px;
+    background-color: inherit;
+    height: auto;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    font-size: 3em;
+    color: rgb(229, 147, 147);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.15s ease-in;
+}
+.base64-form__swap:active{
+    background-color: rgba(0,0,0,.3);
+}
+.base64-form__submit {
+    font-family: 'Dela Gothic One', cursive;
+    letter-spacing: 1px;
+    background-color: rgb(72, 222, 204);
+    color: white;
+    outline: none;
+    border: 1px solid rgb(0, 148, 255);
+    font-size: 1.2em;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: all 0.15s ease-in-out;
+}
+.base64-form__submit:active, base64-form__submit:focus{
+    background-color: rgb(43, 185, 54);
+    letter-spacing: 0px;
+}
+
+.textarea{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    resize:none;
+    border: 1px solid rgb(0, 148, 255);
+}
+.textarea:focus{
+    outline: 1px solid rgb(0, 148, 255);
+}
+
+
+
+
+
+
+#swap-checkbox{
+    display: none;
+}
+
+
+.base64-form__error{
+    display: none;
+}
+.error-display {
+    background-color: antiquewhite;
+    padding: 10px 20px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left:30px;
+    color: red;
+}
