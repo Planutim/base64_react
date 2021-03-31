@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using base64_react.Helpers;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Buffers.Text;
 using System.Collections.Generic;
@@ -13,23 +14,8 @@ namespace base64_react.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class Base64Controller : ControllerBase
-    {
-        // GET: api/<Base64Controller>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<Base64Controller>/5
-        [HttpGet("{id}")]
-
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<Base64Controller>
+    {        
+        // POST api/base64/encode
         [HttpPost]
         [Route("encode")]
         public ActionResult<Response> ToB64([FromBody] StringObject stringObject)
@@ -54,6 +40,7 @@ namespace base64_react.Controllers
             }
         }
 
+        // POST api/base64/decode
         [HttpPost]
         [Route("decode")]
         public ActionResult<Response> FromB64([FromBody] StringObject stringObject)
@@ -77,26 +64,5 @@ namespace base64_react.Controllers
                 };
             }
         }
-
-        // PUT api/<Base64Controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<Base64Controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-    }
-    public class StringObject
-    {
-        public string Text { get; set; }
-    }
-    public class Response
-    {
-        public bool Ok { get; set; }
-        public string Text { get; set; }
     }
 }
